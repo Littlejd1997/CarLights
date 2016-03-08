@@ -32,7 +32,6 @@ void loop() {
     upwards =true;
   }
   previousRead = inputAudio;
-  EVERY_N_SECONDS( 5 ) { pattern(); }
   combineArrays();
   FastLED.show();
 }
@@ -51,11 +50,6 @@ void combineArrays(){
   }
 
 }
-void pattern()
-{
-  gCurrentPatternNumber = (gCurrentPatternNumber == 2) ? 4 : 2;
-}
-
 void randomPerSection(){
     sections[random(0,NUM_SECTIONS)].setHue(random8(0,255));
 }
